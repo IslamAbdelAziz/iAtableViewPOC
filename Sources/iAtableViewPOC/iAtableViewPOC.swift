@@ -1,10 +1,11 @@
 import UIKit
 
 public
-class ChatManager {
+class IAChatManager {
     
     var chatView: IAChatVC?
     
+    public
     init(chatTableViewCell: IAChatCellProtocol) {
         chatView = IAChatVC(chatTableViewCell: chatTableViewCell)
     }
