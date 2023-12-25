@@ -8,7 +8,17 @@ import UIKit
 
 public
 protocol IAChatCellProtocol: UITableViewCell {
-    var cellIdentifier: String { get set }
-    var cellNib: UINib { get set }
     func iAConfigure()
+}
+
+
+public
+extension UITableViewCell{
+    var identifier: String {
+        return String(describing: self)
+    }
+    
+    var nib : UINib{
+        return UINib(nibName: identifier, bundle: nil)
+    }
 }

@@ -13,7 +13,7 @@ class IAChatVC: UIViewController {
     
     init(chatTableViewCell: IAChatCellProtocol) {
         super.init(nibName: "IAChatVC", bundle: nil)
-        chatTV.register(chatTableViewCell.cellNib, forCellReuseIdentifier: chatTableViewCell.cellIdentifier)
+        chatTV.register(chatTableViewCell.nib, forCellReuseIdentifier: chatTableViewCell.identifier)
     }
     
     required init?(coder: NSCoder) {
