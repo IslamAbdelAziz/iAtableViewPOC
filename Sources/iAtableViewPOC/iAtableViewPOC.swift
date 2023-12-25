@@ -7,7 +7,8 @@ class IAChatManager {
     
     public
     init(chatTableViewCell: IAChatCellProtocol) {
-        chatView = IAChatVC(chatTableViewCell: chatTableViewCell)
+        chatView = IAChatVC()
+        chatView?.configureChatView(chatTableViewCell: chatTableViewCell)
     }
     
     public

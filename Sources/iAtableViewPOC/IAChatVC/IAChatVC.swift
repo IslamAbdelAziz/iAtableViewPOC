@@ -10,14 +10,9 @@ import UIKit
 class IAChatVC: UIViewController {
 
     @IBOutlet weak var chatTV: UITableView!
-    
-    init(chatTableViewCell: IAChatCellProtocol) {
-        super.init(nibName: "IAChatVC", bundle: nil)
+        
+    func configureChatView(chatTableViewCell: IAChatCellProtocol){
         chatTV.register(chatTableViewCell.nib, forCellReuseIdentifier: chatTableViewCell.identifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
