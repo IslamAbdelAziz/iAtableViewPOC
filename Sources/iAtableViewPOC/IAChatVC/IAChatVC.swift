@@ -11,16 +11,20 @@ class IAChatVC: UIViewController {
 
     @IBOutlet weak var chatTV: UITableView!
         
-    var chatCellType: IAChatCellProtocol.Type?
-    func configureChatView(chatTableViewCell: IAChatCellProtocol.Type){
-        chatCellType = chatTableViewCell
+    var chatCellNib: UINib?
+    var chatCellIdentifier: String?
+
+    func configureChatView(chatTableViewCellNib: UINib, identifier: String){
+        chatCellNib = chatTableViewCellNib
+        chatCellIdentifier = identifier
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        chatTV.register(chatCellType!.init().nib, forCellReuseIdentifier: chatCellType!.init().identifier)
+        guard let nib = chatCellNib, let id = chatCellIdentifier else { return }
+        chatTV.register(nib, forCellReuseIdentifier: id)
 
     }
     

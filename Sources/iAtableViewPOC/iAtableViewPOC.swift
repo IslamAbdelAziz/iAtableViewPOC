@@ -6,9 +6,9 @@ class IAChatManager {
     var chatView: IAChatVC?
     
     public
-    init(chatTableViewCell: IAChatCellProtocol.Type) {
+    init(chatTableViewCellNib: UINib, identifier: String) {
         chatView = IAChatVC()
-        chatView?.configureChatView(chatTableViewCell: chatTableViewCell)
+        chatView?.configureChatView(chatTableViewCellNib: chatTableViewCellNib, identifier: identifier)
     }
     
     public

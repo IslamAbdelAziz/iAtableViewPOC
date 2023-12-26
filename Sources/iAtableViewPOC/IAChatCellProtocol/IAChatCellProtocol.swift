@@ -12,13 +12,3 @@ protocol IAChatCellProtocol: UITableViewCell {
 }
 
 
-public
-extension UITableViewCell{
-    var identifier: String {
-        return String(describing: self)
-    }
-    
-    var nib : UINib{
-        return UINib(nibName: identifier, bundle: nil)
-    }
-}
