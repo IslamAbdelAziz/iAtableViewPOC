@@ -7,7 +7,7 @@ class IAChatManager {
     
     public
     init(chatTableViewCellNib: UINib, identifier: String) {
-        chatView = IAChatVC(nibName: "IAChatVC", bundle: Bundle(identifier: "com.iA.iAtableViewPOC"))
+        chatView = IAChatVC(nibName: "IAChatVC", bundle: Bundle(identifier: "com.IA.iAtableViewPOC"))
         chatView?.configureChatView(chatTableViewCellNib: chatTableViewCellNib, identifier: identifier)
     }
     
