@@ -29,7 +29,7 @@ class IAChatManager {
     }
     
     public
-    func getChatView() -> (any ChatSwiftUIType)? {
+    func getChatSwiftUIView() -> (any ChatSwiftUIType)? {
         return chatSwiftUIView
     }
     
