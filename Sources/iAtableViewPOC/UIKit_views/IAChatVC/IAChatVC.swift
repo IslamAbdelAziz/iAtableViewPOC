@@ -33,7 +33,7 @@ class IAChatVC: UIViewController {
         // Do any additional setup after loading the view.
         guard listOfChatCellNib.count == listOfChatCellIdentifier.count, listOfChatCellNib.count > 0 else { return }
         
-        for i in 0 ... listOfChatCellNib.count {
+        for i in 0 ... listOfChatCellNib.count - 1 {
             chatTV.register(listOfChatCellNib[i], forCellReuseIdentifier: listOfChatCellIdentifier[i])
         }
 
