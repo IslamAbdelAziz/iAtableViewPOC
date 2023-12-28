@@ -12,7 +12,7 @@ class IAChatVC: UIViewController {
     @IBOutlet weak var chatTV: UITableView!
         
     var chatCellNib: UINib?
-    var chatCellIdentifier: String?
+    var chatCellIdentifier: String = ""
 
     func configureChatView(chatTableViewCellNib: UINib, identifier: String){
         chatCellNib = chatTableViewCellNib
@@ -23,8 +23,8 @@ class IAChatVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        guard let nib = chatCellNib, let id = chatCellIdentifier else { return }
-        chatTV.register(nib, forCellReuseIdentifier: id)
+        guard let nib = chatCellNib else { return }
+        chatTV.register(nib, forCellReuseIdentifier: chatCellIdentifier)
 
     }
     
@@ -37,7 +37,9 @@ extension IAChatVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: chatCellIdentifier, for: indexPath) as? IAChatCellProtocol
+        cell?.iAConfigure()
+        return cell ?? UITableViewCell()
     }
     
     
