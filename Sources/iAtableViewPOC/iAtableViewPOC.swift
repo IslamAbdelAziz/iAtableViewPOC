@@ -10,8 +10,14 @@ class IAChatManager {
     public
     init(chatTableViewCellNib: UINib, identifier: String) {
         chatView = IAChatVC(nibName: "IAChatVC", bundle: .module)
-//        chatView = UIStoryboard(name: "ChatStoryboard", bundle: .module).instantiateViewController(identifier: "ChatVC2")
         chatView?.configureChatView(chatTableViewCellNib: chatTableViewCellNib, identifier: identifier)
+    }
+        
+    public
+    init(arrayOfNibFiles: [UINib], arrayOfIdentifers: [String]) {
+        chatView = IAChatVC(nibName: "IAChatVC", bundle: .module)
+//        chatView?.configureChatView(chatTableViewCellNib: chatTableViewCellNib, identifier: identifier)
+        chatView?.configureChatView(listOfCellsNib: arrayOfNibFiles, listOfIdentifiers: arrayOfIdentifers)
     }
         
     public
