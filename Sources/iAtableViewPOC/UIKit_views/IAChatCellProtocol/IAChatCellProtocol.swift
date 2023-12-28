@@ -8,7 +8,7 @@ import UIKit
 
 public
 protocol IAChatCellProtocol: UITableViewCell {
-    func iAConfigure()
+    func iAConfigure(text: String)
 }
 
 
