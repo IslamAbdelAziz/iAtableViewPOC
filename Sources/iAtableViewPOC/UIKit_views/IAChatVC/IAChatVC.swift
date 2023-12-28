@@ -84,12 +84,21 @@ extension IAChatVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 2 == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: listOfChatCellIdentifier[0], for: indexPath) as? IAChatCellProtocol
-            cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[Int.random(in: 0..<26)])
+            if indexPath.row == 0{
+                cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[0])
+            }else{
+                cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[Int.random(in: 0..<26)])
+            }
             return cell ?? UITableViewCell()
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: listOfChatCellIdentifier[1], for: indexPath) as? IAChatCellProtocol
-            cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[Int.random(in: 0..<26)])
+            if indexPath.row == 1{
+                cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[1])
+            }else{
+                cell?.iAConfigure(text: arrayOfDummyMsgsForDemo[Int.random(in: 0..<26)])
+            }
+
             return cell ?? UITableViewCell()
 
         }
