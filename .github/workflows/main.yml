@@ -1,0 +1,11 @@
+name: Test scheduled cron Jobs
+
+on:
+  schedule: 
+    - cron: '30 1 * * SUN'
+
+jobs:
+    runs-on: ubuntu-latest
+  name: test cron job
+  run: |
+    echo This Cron Job is Working on Every Sunday at 1:30 AM
