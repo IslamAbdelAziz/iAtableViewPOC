@@ -1,7 +1,7 @@
 name: Test scheduled cron Jobs
 on:
-  	schedule: 
-      - cron: '48 1 * * SUN'
+  schedule:
+      - cron: '51 1 * * SUN'
 
 jobs:
   merge:
