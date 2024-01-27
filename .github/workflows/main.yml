@@ -1,13 +1,16 @@
 name: Test scheduled cron Jobs
-
 on:
-  schedule: 
-    - cron: '30 1 * * SUN'
+  	schedule: 
+      - cron: '48 1 * * SUN'
 
 jobs:
+  merge:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Run every Sunday
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Git
         run: |
-          echo cron job success
+          echo cron Works
